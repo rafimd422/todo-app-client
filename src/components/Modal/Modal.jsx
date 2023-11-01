@@ -31,9 +31,9 @@ const Modal = () => {
         >
           <path
             stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
             d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
           />
         </svg>
@@ -46,7 +46,7 @@ const Modal = () => {
         <form className="space-y-6" action="#">
           <div>
             <label
-              for="todo-title"
+              htmlFor="todo-title"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
             Todo Title
@@ -62,7 +62,7 @@ const Modal = () => {
           </div>
           <div>
             <label
-              for="Descripton"
+              htmlFor="Descripton"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
               Your Descripton
@@ -76,9 +76,9 @@ const Modal = () => {
             />
           </div>
 <div>
-<label for="underline_select" class="sr-only">Underline select</label>
-<select id="underline_select" class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer" required>
-    <option selected>Task status</option>
+<label htmlFor="underline_select" className="sr-only">Underline select</label>
+<select id="underline_select" className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer" required>
+    <option defaultValue>Task status</option>
     <option value="To Do">To Do</option>
     <option value="In Progress">In Progress</option>
     <option value="Complated">Complated</option>
@@ -89,7 +89,7 @@ const Modal = () => {
             type="submit"
             className="w-full text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
           >
-            Add Todo
+            Add Task
           </button>
         </form>
       </div>
