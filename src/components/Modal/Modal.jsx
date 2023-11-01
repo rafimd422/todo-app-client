@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { TaskProvider } from '../Context/TaskContext';
 
-const Modal = ({setModalVisible}) => {
+const Modal = () => {
 
 
+    const {setModalVisible} = useContext(TaskProvider)
 
     const hideModal = () => {
         setModalVisible(false);
@@ -38,8 +40,8 @@ const Modal = ({setModalVisible}) => {
         <span className="sr-only">Close modal</span>
       </button>
       <div className="px-6 py-6 lg:px-8">
-        <h3 className="mb-4 text-xl font-medium text-gray-900 dark:text-white">
-          Sign in to our platform
+        <h3 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white text-center">
+          Add Your Task
         </h3>
         <form className="space-y-6" action="#">
           <div>
@@ -50,7 +52,7 @@ const Modal = ({setModalVisible}) => {
             Todo Title
             </label>
             <input
-              type="todo-title"
+              type="text"
               name="todo-title"
               id="todo-title"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
@@ -65,8 +67,7 @@ const Modal = ({setModalVisible}) => {
             >
               Your Descripton
             </label>
-            <input
-              type="Descripton"
+            <textarea
               name="Descripton"
               id="Descripton"
               placeholder="Description of Todo"
@@ -74,6 +75,15 @@ const Modal = ({setModalVisible}) => {
               required
             />
           </div>
+<div>
+<label for="underline_select" class="sr-only">Underline select</label>
+<select id="underline_select" class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer" required>
+    <option selected>Task status</option>
+    <option value="To Do">To Do</option>
+    <option value="In Progress">In Progress</option>
+    <option value="Complated">Complated</option>
+</select>
+</div>
 
           <button
             type="submit"

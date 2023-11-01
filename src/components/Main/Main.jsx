@@ -1,20 +1,16 @@
-import { useState } from "react";
+import { useContext } from "react";
 import Modal from './../Modal/Modal';
+import { TaskProvider } from "../Context/TaskContext";
 
 const Main = () => {
   
 
-    const [modalVisible, setModalVisible] = useState(false);
+  const {modalVisible,setModalVisible} = useContext(TaskProvider)
 
     const toggleModal = () => {
       setModalVisible(!modalVisible);
     };
   
-
-  
-
-
-
 
 
 
@@ -40,7 +36,7 @@ const Main = () => {
           aria-hidden="true"
           className="fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-screen max-h-full mx-auto flex justify-center items-center"
         >
-<Modal setModalVisible={setModalVisible}/>
+<Modal/>
         </div>
       )}
 
