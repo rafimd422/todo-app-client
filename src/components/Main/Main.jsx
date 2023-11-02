@@ -2,6 +2,8 @@ import { useContext, useState } from "react";
 import Modal from "./../Modal/Modal";
 import { TaskProvider } from "../Context/TaskContext";
 import { TabList, TabPanel, Tabs, Tab } from "react-tabs";
+import AllTodos from "../AllTodos/AllTodos";
+import InProgress from "../InProgress/InProgress";
 
 const Main = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -72,25 +74,13 @@ const Main = () => {
 
           <TabPanel>
             <ul>
-              <li className="w-full border border-red-500 rounded-lg p-3 md:px-5 flex justify-between items-center mb-2">
-                <div>
-                  <p className="text-xl font-semibold">Title</p>
-                  <p className="text-sm mt-2">description</p>
-                </div>
-                <p>status</p>
-              </li>
+              <AllTodos/>
             </ul>
           </TabPanel>
           <TabPanel>
             <ul>
-              <li className="w-full border border-red-500 rounded-lg p-3 md:px-5 flex justify-between items-center mb-2">
-                <div>
-                  <p className="text-xl font-semibold">Title</p>
-                  <p className="text-sm mt-2">descripion</p>
-                </div>
-                <p>status</p>
-              </li>
-            </ul>{" "}
+             <InProgress/>
+            </ul>
           </TabPanel>
           <TabPanel>
             <ul>
