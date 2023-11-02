@@ -21,7 +21,7 @@ const Main = () => {
 
   return (
     <div className="min-h-screen w-screen p-16 bg-gray-700">
-      <div className=" bg-gray-900 text-white max-w-[600px] mx-auto rounded-md shadow-xl p-4">
+      <div className=" bg-gray-900 text-white lg:max-w-[1000px] max-w-[800px] mx-auto rounded-md shadow-xl p-4">
         <h3 className="text-3xl font-bold text-center text-amber-50 p-2">
           Todo App
         </h3>

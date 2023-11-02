@@ -109,7 +109,7 @@ const Modal = () => {
                 <option defaultValue>Task status</option>
                 <option value="To Do">To Do</option>
                 <option value="In Progress">In Progress</option>
-                <option value="Complated">Complated</option>
+                <option value="Completed">Completed</option>
               </select>
             </div>
 
