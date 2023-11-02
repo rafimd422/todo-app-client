@@ -4,6 +4,7 @@ import { TaskProvider } from "../Context/TaskContext";
 import { TabList, TabPanel, Tabs, Tab } from "react-tabs";
 import AllTodos from "../AllTodos/AllTodos";
 import InProgress from "../InProgress/InProgress";
+import ComplatedTask from '../ComplatedTask/ComplatedTask';
 
 const Main = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -12,7 +13,7 @@ const Main = () => {
     setActiveTab(tabIndex);
   };
 
-  const { modalVisible, setModalVisible } = useContext(TaskProvider);
+  const { modalVisible, setModalVisible,todos } = useContext(TaskProvider);
 
   const toggleModal = () => {
     setModalVisible(!modalVisible);
@@ -84,19 +85,13 @@ const Main = () => {
           </TabPanel>
           <TabPanel>
             <ul>
-              <li className="w-full border border-red-500 rounded-lg p-3 md:px-5 flex justify-between items-center mb-2">
-                <div>
-                  <p className="text-xl font-semibold">Title</p>
-                  <p className="text-sm mt-2">descriptin</p>
-                </div>
-                <p>status</p>
-              </li>
-            </ul>{" "}
+<ComplatedTask />
+            </ul>
           </TabPanel>
         </Tabs>
 
         <ul>
-          <p className="text-center p-2">You Have TodoLength pending todos</p>
+          <p className="text-center p-2">You Have  {todos.length} todos</p>
         </ul>
       </div>
     </div>
