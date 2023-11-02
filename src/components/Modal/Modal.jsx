@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { TaskProvider } from '../Context/TaskContext';
+import axios from 'axios';
 
 const Modal = () => {
     const {setModalVisible} = useContext(TaskProvider)
@@ -17,6 +18,9 @@ const handleTodos = e =>{
 const ovarallTask = {title, description, status}
 
   console.log(ovarallTask)
+axios.post('http://localhost:3000/todo',ovarallTask)
+.then(res => console.log(res.data))
+.catch(err => console.log(err.message))
 }
 
   return (
