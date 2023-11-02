@@ -2,15 +2,22 @@ import React, { useContext } from 'react'
 import { TaskProvider } from '../Context/TaskContext';
 
 const Modal = () => {
-
-
     const {setModalVisible} = useContext(TaskProvider)
 
     const hideModal = () => {
         setModalVisible(false);
       };
 
+const handleTodos = e =>{
+  e.preventDefault()
+  const form = e.target;
+  const title = form.todoTitle.value;
+  const description = form.Descripton.value;
+  const status = form.select.value;
+const ovarallTask = {title, description, status}
 
+  console.log(ovarallTask)
+}
 
   return (
     <div className="relative w-full mx-auto max-w-md max-h-full">
@@ -43,18 +50,18 @@ const Modal = () => {
         <h3 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white text-center">
           Add Your Task
         </h3>
-        <form className="space-y-6" action="#">
+        <form onSubmit={handleTodos} className="space-y-6" action="#">
           <div>
             <label
-              htmlFor="todo-title"
+              htmlFor="todoTitle"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
             Todo Title
             </label>
             <input
               type="text"
-              name="todo-title"
-              id="todo-title"
+              name="todoTitle"
+              id="todoTitle"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
               placeholder="Title"
               required
@@ -76,8 +83,8 @@ const Modal = () => {
             />
           </div>
 <div>
-<label htmlFor="underline_select" className="sr-only">Underline select</label>
-<select id="underline_select" className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer" required>
+<label htmlFor="select" className="sr-only">Underline select</label>
+<select id="select" name='select' className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer" required>
     <option defaultValue>Task status</option>
     <option value="To Do">To Do</option>
     <option value="In Progress">In Progress</option>
